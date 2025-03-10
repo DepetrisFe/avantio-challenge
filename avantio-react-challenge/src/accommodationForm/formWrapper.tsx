@@ -13,6 +13,7 @@ interface FormValues {
   accommodationType: accommodationTypesEnum;
   ownerName: string;
   ownerEmail: string;
+  ownerPhone: string;
 }
 
 const FormWrapper = () => {
@@ -24,8 +25,9 @@ const FormWrapper = () => {
       accommodationType: accommodationTypesEnum.APARTMENT,
       ownerName: "",
       ownerEmail: "",
+      ownerPhone: "",
     },
-    mode: "all",
+    mode: "onBlur",
   });
 
   const [step, setStep] = useState(stepsEnum.ACCOMODATION_STEP);
@@ -41,7 +43,7 @@ const FormWrapper = () => {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="p-2 w-full m-4 h-96  sm:w-96 border border-gray-100 rounded shadow-xl"
+        className="p-2 w-full m-4 h-5/6  sm:w-96 border border-gray-100 rounded shadow-xl"
       >
         {step === stepsEnum.ACCOMODATION_STEP && <AccommodationStep nextStep={nextStep} />}
         {step === stepsEnum.OWNER_STEP && <OwnerStep nextStep={nextStep} prevStep={prevStep} />}

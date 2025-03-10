@@ -30,6 +30,9 @@ const SummaryStep: React.FC<SummaryStepProps> = ({ prevStep }) => {
         <p>
           <strong>Owner Email:</strong> {watch(formValuesEnum.OWNER_EMAIL)}
         </p>
+        <p>
+          <strong>Owner Phone:</strong> {watch(formValuesEnum.OWNER_PHONE)}
+        </p>
       </div>
       <div className="grid grid-cols-2 gap-2">
         <button type="button" onClick={prevStep} className="bg-blue-500 text-white px-4 py-2 rounded">
